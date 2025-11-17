@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+  <!-- Not responsive on purpose: do not include a responsive viewport meta tag -->
+    <title>4 Plots - Cuadrícula</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background: #ffffff;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 850px 850px;
+        grid-template-rows: 530px 530px;
+        width: 800px;
+        height: 400px;
+        box-sizing: content-box;
+        background: transparent;
+      }
+
+      .plot {
+        position: relative;
+        background: white;
+        border: 1px solid #ffffff;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding-top: 25px; /* space for the title */
+      }
+
+      .plot h2 {
+        position: absolute;
+        left: 12px;
+        top: 6px;
+        margin: 0;
+        background: rgba(255,255,255,1);
+        font-size: 20px; /* fixed font-size in px for consistency */
+        z-index: 2;
+      }
+
+      .plot iframe {
+        width: 100%;
+        height: calc(100% - 36px); /* subtract title space */
+        border: 0;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="plot">
+        <h2>BNG</h2>
+        <iframe src="bng.html" title="BNG"></iframe>
+      </div>
+
+      <div class="plot">
+        <h2>CGNAT</h2>
+        <iframe src="cgnat.html" title="CGNAT"></iframe>
+      </div>
+
+      <div class="plot">
+        <h2>CORE ROUTER</h2>
+        <iframe src="core_router.html" title="CORE ROUTER"></iframe>
+      </div>
+
+      <div class="plot">
+        <h2>METRO ETHERNET</h2>
+        <iframe src="metroethernet.html" title="METRO ETHERNET"></iframe>
+      </div>
+    </div>
+  </body>
+</html>
